@@ -4,9 +4,9 @@ description: Transcribe video or audio files to text. Use when the user wants to
 allowed-tools: Bash
 ---
 
-# Video Transcription
+# Audio & Video Transcription
 
-Transcribe a video or audio file using OpenAI's transcription API.
+Transcribe video or audio files to text using OpenAI's transcription API.
 
 ## How to use
 
@@ -22,10 +22,16 @@ For timestamped output (SRT format):
 bash "${CLAUDE_SKILL_DIR}/scripts/transcribe.sh" "<path-to-file>" --timestamps
 ```
 
+## Supported formats
+
+- **Video**: mp4, mov, avi, mkv, webm (audio is extracted automatically via ffmpeg)
+- **Audio**: mp3, wav, m4a, flac, ogg, aac, wma (sent directly to API)
+
 ## Behavior
 
-- The script extracts audio from video files using ffmpeg (auto-installs if missing)
-- Sends audio to OpenAI's gpt-4o-transcribe model for best accuracy
+- Video files: extracts audio first using ffmpeg (auto-installs if missing)
+- Audio files: sent directly to the API — no conversion needed
+- Uses OpenAI's gpt-4o-transcribe model for best accuracy
 - When `--timestamps` is used, falls back to whisper-1 (which supports SRT output)
 - Files larger than 25MB are compressed to fit the API limit
 - Temp files are cleaned up automatically

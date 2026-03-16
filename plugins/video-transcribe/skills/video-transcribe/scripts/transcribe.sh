@@ -103,6 +103,12 @@ if [[ "$MIME_TYPE" == video/* ]]; then
   TEMP_FILES+=("$TEMP_AUDIO")
   ffmpeg -i "$FILE" -ar 16000 -ac 1 -f wav -y "$TEMP_AUDIO" 2>/dev/null
   AUDIO_FILE="$TEMP_AUDIO"
+elif [[ "$MIME_TYPE" == audio/* ]]; then
+  echo "Audio file detected. Sending directly to API..."
+else
+  echo "Error: Unsupported file type: $MIME_TYPE"
+  echo "Supported: video (mp4, mov, avi, mkv, webm) and audio (mp3, wav, m4a, flac, ogg, aac)"
+  exit 1
 fi
 
 # --- Check file size and compress if needed (25MB API limit) ---
