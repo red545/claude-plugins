@@ -1,0 +1,8 @@
+{
+  "name": "video-transcribe",
+  "description": "Transcribe video and audio files using OpenAI's transcription API. Extracts audio with ffmpeg and transcribes via gpt-4o-transcribe.",
+  "version": "1.0.0",
+  "author": {
+    "name": "nik"
+  }
+}

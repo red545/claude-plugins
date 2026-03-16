@@ -1,0 +1,13 @@
+{
+  "name": "nik-plugins",
+  "owner": {
+    "name": "nik"
+  },
+  "plugins": [
+    {
+      "name": "video-transcribe",
+      "source": "./plugins/video-transcribe",
+      "description": "Transcribe video and audio files using OpenAI's transcription API"
+    }
+  ]
+}
