@@ -8,6 +8,11 @@
       "name": "video-transcribe",
       "source": "./plugins/video-transcribe",
       "description": "Transcribe video and audio files using OpenAI's transcription API"
+    },
+    {
+      "name": "social-scraper",
+      "source": "./plugins/social-scraper",
+      "description": "Scrape YouTube, TikTok, and Instagram for sponsorships and partnerships"
     }
   ]
 }

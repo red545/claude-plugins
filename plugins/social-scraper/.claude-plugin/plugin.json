@@ -1,0 +1,8 @@
+{
+  "name": "social-scraper",
+  "description": "Scrape YouTube, TikTok, and Instagram for sponsorships and partnerships using Apify APIs.",
+  "version": "1.0.0",
+  "author": {
+    "name": "nik"
+  }
+}
